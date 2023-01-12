@@ -1,11 +1,14 @@
 <template>
+  <div style="text-align: center; margin: calc(2vh)">
+    <n-h1> Promise87 Bespoke Edition Wishlist Form </n-h1>
+  </div>
   <div style="display: flex">
     <n-card
       title="Notify me"
       size="large"
       hoverable="true"
       :bordered="false"
-      style="margin: calc(4vh) calc(15vw) 0px calc(15vw)"
+      style="margin: calc(2vh) calc(15vw) 0px calc(15vw)"
     >
       <n-form ref="formRef" :model="model" :rules="rules">
         <n-form-item path="username" label="Name">
@@ -114,7 +117,7 @@ const rules: FormRules = {
       required: true,
       validator(rule: FormItemRule, value: string) {
         if (!value) {
-          return new Error("empty discord");
+          return new Error("empty name");
         }
         return true;
       },
