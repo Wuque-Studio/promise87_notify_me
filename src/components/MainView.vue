@@ -5,9 +5,16 @@
       size="large"
       hoverable="true"
       :bordered="false"
-      style="margin: calc(10vh) calc(15vw) 0px calc(15vw)"
+      style="margin: calc(4vh) calc(15vw) 0px calc(15vw)"
     >
       <n-form ref="formRef" :model="model" :rules="rules">
+        <n-form-item path="username" label="Name">
+          <n-input
+            v-model:value="model.username"
+            @keydown.enter.prevent
+            placeholder="Please input your name"
+          />
+        </n-form-item>
         <n-form-item path="email" label="Email">
           <n-input
             v-model:value="model.email"
@@ -23,7 +30,7 @@
             placeholder="Please input your discord"
           />
         </n-form-item>
-        <n-form-item path="country" label="Name">
+        <n-form-item path="country" label="Country">
           <n-input
             v-model:value="model.country"
             @keydown.enter.prevent
@@ -34,9 +41,11 @@
         <div style="text-align: center">
           <n-button
             :disabled="
+              model.username === '' ||
               model.country === '' ||
               model.discord === '' ||
               model.email === '' ||
+              model.username === null ||
               model.country === null ||
               model.discord === null ||
               model.email === null ||
@@ -64,6 +73,7 @@ import { ref } from "vue";
 import axios from "axios";
 
 interface ModelType {
+  username: string | null;
   email: string | null;
   country: string | null;
   discord: string | null;
@@ -72,6 +82,7 @@ interface ModelType {
 const formRef = ref<FormInst | null>(null);
 const message = useMessage();
 const model = ref<ModelType>({
+  username: null,
   email: null,
   country: null,
   discord: null,
@@ -98,6 +109,18 @@ const signinClick = (e: MouseEvent) => {
 };
 
 const rules: FormRules = {
+  username: [
+    {
+      required: true,
+      validator(rule: FormItemRule, value: string) {
+        if (!value) {
+          return new Error("empty discord");
+        }
+        return true;
+      },
+      trigger: ["input", "blur"],
+    },
+  ],
   discord: [
     {
       required: true,
@@ -129,6 +152,7 @@ const rules: FormRules = {
         if (!value.includes("@")) {
           return new Error("incorrect email");
         }
+        return true;
       },
       trigger: "input",
     },
