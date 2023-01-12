@@ -342,36 +342,67 @@ import TheMain from "../components/MainView.vue";
         <div class="grid-uniform">
           <div class="grid__item large--one-quarter medium--one-half">
             <ul class="no-bullets site-footer__linklist">
-              <li><a href="/search">Search</a></li>
-
-              <li><a href="/pages/about-us">About Us</a></li>
-
-              <li><a href="/pages/contact-us">Contact Us</a></li>
-
-              <li><a href="/pages/shipping-policy">Policy</a></li>
+              <li><a href="https://shop.wuquestudio.com/search">Search</a></li>
 
               <li>
-                <a href="/pages/intellectual-property-rights"
+                <a href="https://shop.wuquestudio.com/pages/about-us"
+                  >About Us</a
+                >
+              </li>
+
+              <li>
+                <a href="https://shop.wuquestudio.com/pages/contact-us"
+                  >Contact Us</a
+                >
+              </li>
+
+              <li>
+                <a href="https://shop.wuquestudio.com/pages/shipping-policy"
+                  >Policy</a
+                >
+              </li>
+
+              <li>
+                <a
+                  href="https://shop.wuquestudio.com/pages/intellectual-property-rights"
                   >Intellectual Property Rights</a
                 >
               </li>
 
-              <li><a href="/pages/privacy-policy">Privacy Policy</a></li>
+              <li>
+                <a href="https://shop.wuquestudio.com/pages/privacy-policy"
+                  >Privacy Policy</a
+                >
+              </li>
             </ul>
           </div>
           <div class="grid__item large--one-quarter medium--one-half">
             <ul class="no-bullets site-footer__linklist">
               <li>
-                <a href="/pages/terms-conditions">Terms &amp; Conditions</a>
+                <a href="https://shop.wuquestudio.com/pages/terms-conditions"
+                  >Terms &amp; Conditions</a
+                >
               </li>
 
-              <li><a href="/pages/affiliate">Affiliate</a></li>
+              <li>
+                <a href="https://shop.wuquestudio.com/pages/affiliate"
+                  >Affiliate</a
+                >
+              </li>
 
               <li><a href="https://discord.com/invite/CJjtbwr">Discord</a></li>
 
-              <li><a href="/policies/terms-of-service">Terms of Service</a></li>
+              <li>
+                <a href="https://shop.wuquestudio.com/policies/terms-of-service"
+                  >Terms of Service</a
+                >
+              </li>
 
-              <li><a href="/policies/refund-policy">Refund policy</a></li>
+              <li>
+                <a href="https://shop.wuquestudio.com/policies/refund-policy"
+                  >Refund policy</a
+                >
+              </li>
             </ul>
           </div>
 
