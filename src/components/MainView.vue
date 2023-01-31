@@ -11,9 +11,9 @@
       style="margin: calc(2vh) calc(15vw) 0px calc(15vw)"
     >
       <n-form ref="formRef" :model="info" :rules="rules">
-        <n-form-item path="username" label="Name">
+        <n-form-item path="name" label="Name">
           <n-input
-            v-model:value="info.username"
+            v-model:value="info.name"
             @keydown.enter.prevent
             placeholder="Please input your name"
           />
@@ -44,11 +44,11 @@
         <div style="text-align: center">
           <n-button
             :disabled="
-              info.username === '' ||
+              info.name === '' ||
               info.country === '' ||
               info.discord === '' ||
               info.email === '' ||
-              info.username === null ||
+              info.name === null ||
               info.country === null ||
               info.discord === null ||
               info.email === null ||
@@ -87,7 +87,7 @@ const signinClick = (e: MouseEvent) => {
   formRef.value?.validate(async () => {
     try {
       await axios
-        .post("http://127.0.0.1:9000/api/notify", info.$state, {
+        .post("https://120.79.0.147/api/notify", info.$state, {
           headers: {
             "Content-Type": "application/json",
           },
@@ -103,12 +103,12 @@ const signinClick = (e: MouseEvent) => {
 };
 
 const rules: FormRules = {
-  username: [
+  name: [
     {
       required: true,
       validator(rule: FormItemRule, value: string) {
         if (!value) {
-          return new Error("empty discord");
+          return new Error("empty name");
         }
         return true;
       },
