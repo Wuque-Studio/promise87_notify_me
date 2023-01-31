@@ -10,17 +10,17 @@
       :bordered="false"
       style="margin: calc(2vh) calc(15vw) 0px calc(15vw)"
     >
-      <n-form ref="formRef" :model="model" :rules="rules">
+      <n-form ref="formRef" :model="info" :rules="rules">
         <n-form-item path="username" label="Name">
           <n-input
-            v-model:value="model.username"
+            v-model:value="info.username"
             @keydown.enter.prevent
             placeholder="Please input your name"
           />
         </n-form-item>
         <n-form-item path="email" label="Email">
           <n-input
-            v-model:value="model.email"
+            v-model:value="info.email"
             type="email"
             placeholder="Please input your email"
             @keydown.enter.prevent
@@ -28,14 +28,14 @@
         </n-form-item>
         <n-form-item path="discord" label="Discord Handle">
           <n-input
-            v-model:value="model.discord"
+            v-model:value="info.discord"
             @keydown.enter.prevent
             placeholder="Please input your discord"
           />
         </n-form-item>
         <n-form-item path="country" label="Country">
           <n-input
-            v-model:value="model.country"
+            v-model:value="info.country"
             @keydown.enter.prevent
             placeholder="Please input your country"
           />
@@ -44,15 +44,15 @@
         <div style="text-align: center">
           <n-button
             :disabled="
-              model.username === '' ||
-              model.country === '' ||
-              model.discord === '' ||
-              model.email === '' ||
-              model.username === null ||
-              model.country === null ||
-              model.discord === null ||
-              model.email === null ||
-              !model.email.includes('@')
+              info.username === '' ||
+              info.country === '' ||
+              info.discord === '' ||
+              info.email === '' ||
+              info.username === null ||
+              info.country === null ||
+              info.discord === null ||
+              info.email === null ||
+              !info.email.includes('@')
             "
             round
             type="primary"
@@ -70,33 +70,24 @@
 </template>
 
 <script setup lang="ts">
+import { useInfoStore } from "@/stores/info";
 import type { FormInst, FormItemRule, FormRules } from "naive-ui";
 import { useMessage } from "naive-ui";
 import { ref } from "vue";
 import axios from "axios";
 
-interface ModelType {
-  username: string | null;
-  email: string | null;
-  country: string | null;
-  discord: string | null;
-}
-
 const formRef = ref<FormInst | null>(null);
 const message = useMessage();
-const model = ref<ModelType>({
-  username: null,
-  email: null,
-  country: null,
-  discord: null,
-});
+const info = useInfoStore();
 
 const signinClick = (e: MouseEvent) => {
+  console.log(info.$state);
+
   e.preventDefault();
   formRef.value?.validate(async () => {
     try {
       await axios
-        .post("http://120.79.0.147:80/api/auth/signin", model.value, {
+        .post("http://127.0.0.1:9000/api/notify", info.$state, {
           headers: {
             "Content-Type": "application/json",
           },
@@ -117,7 +108,7 @@ const rules: FormRules = {
       required: true,
       validator(rule: FormItemRule, value: string) {
         if (!value) {
-          return new Error("empty name");
+          return new Error("empty discord");
         }
         return true;
       },
