@@ -29,7 +29,7 @@ import TheMain from "../components/MainView.vue";
     />
 
     <!-- Title and description ================================================== -->
-    <title>[GB] Promise87 Bespoke Edition – 无缺工作室</title>
+    <title>promise87_notify_me</title>
 
     <meta
       name="description"
@@ -44,7 +44,7 @@ import TheMain from "../components/MainView.vue";
       property="og:url"
       content="https://shop.wuquestudio.com/products/promise87-bespoke-edition"
     />
-    <meta property="og:title" content="[GB] Promise87 Bespoke Edition" />
+    <meta property="og:title" content="promise87_notify_me" />
     <meta property="og:type" content="product" />
     <meta
       property="og:description"
@@ -453,7 +453,7 @@ import TheMain from "../components/MainView.vue";
                 type="hidden"
                 name="_method"
                 value="put"
-              /><input type="hidden" name="return_to" value="/" />
+              /><input type="hidden" name="return_to" value="https://shop.wuquestudio.com/" />
             </form>
             <p class="site-footer__copyright-content">
               © 2023,
