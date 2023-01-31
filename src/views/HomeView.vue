@@ -177,7 +177,7 @@ import TheMain from "../components/MainView.vue";
                     class="h1 site-header__logo large--left"
                     itemtype="http://schema.org/Organization"
                   >
-                    <a href="/" itemprop="url" class="site-header__logo-link">
+                    <a href="https://shop.wuquestudio.com/" itemprop="url" class="site-header__logo-link">
                       <img
                         class="site-header__logo-image"
                         src="//cdn.shopify.com/s/files/1/0403/9809/4489/files/logo-black_210x.png?v=1613534443"
@@ -452,7 +452,7 @@ import TheMain from "../components/MainView.vue";
               /><input type="hidden" name="return_to" value="/" />
             </form>
             <p class="site-footer__copyright-content">
-              © 2023, <a href="/" title="">Wuque Studio</a><br /><a
+              © 2023, <a href="https://shop.wuquestudio.com/" title="">Wuque Studio</a><br /><a
                 target="_blank"
                 rel="nofollow"
                 href="https://www.shopify.com?utm_campaign=poweredby&amp;utm_medium=shopify&amp;utm_source=onlinestore"
