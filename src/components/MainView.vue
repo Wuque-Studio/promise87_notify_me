@@ -87,7 +87,7 @@ const signinClick = (e: MouseEvent) => {
   formRef.value?.validate(async () => {
     try {
       await axios
-        .post("https://120.79.0.147/api/notify", info.$state, {
+        .post("https://www.wuque.studio/api/notify", info.$state, {
           headers: {
             "Content-Type": "application/json",
           },
